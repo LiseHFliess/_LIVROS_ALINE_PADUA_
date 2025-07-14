@@ -286,61 +286,113 @@ background-image: url("../img/BANNER.png");
   margin-top: 15px;
 }
 
-/* 📱 RESPONSIVIDADE */
-@media (max-width: 991px) {
-  main {
-    padding: 80px 15px 30px;
-  }
-
-  .saga-titulo {
-    font-size: 1.5em;
-    margin: 15px;
-  }
-
-  .card-container {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 15px;
-    padding: 15px;
-  }
-
-  .titulo-livro {
-    font-size: 0.9em;
-    padding: 8px;
-  }
+/* 📱 RESPONSIVIDADE *//* 👣 RODAPÉ */
+.footer {
+    background-image: url("../img/BANNER.png"); /* Ajuste o caminho da imagem conforme necessário */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    padding-bottom: 50px; /* Padding inferior padrão para o footer (desktop) */
 }
 
+/* Verifique se este spacer ainda é necessário ou se o padding do footer é suficiente */
+.footer-spacer {
+    height: 400px;
+}
+
+.footer-autora-horizontal {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.autora-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.autora-img {
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.autora-texto {
+    max-width: 400px;
+    text-align: left;
+}
+
+.autora-texto p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    color: #f0f0f0;
+}
+
+.footer-icons {
+    margin-top: 20px; /* Espaço entre o texto e os ícones sociais */
+}
+
+.footer-icons a {
+    display: inline-block; /* Para garantir que as imagens sejam tratadas como blocos em linha */
+    margin: 0 10px; /* Espaçamento entre os ícones */
+}
+
+.footer-icons a img {
+    width: 34px;
+    height: 34px;
+    filter: invert(1); /* Inverte as cores para que os ícones fiquem brancos */
+    transition: transform 0.3s ease;
+}
+
+.footer-icons a:hover img {
+    transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
+}
+
+.footer-copy {
+    font-size: 15px;
+    opacity: 0.85;
+    margin-top: 15px;
+}
+
+---
+
+### Media Queries para o Footer (Responsividade)
+
+```css
+/* 📱 RESPONSIVIDADE */
+
+/* Para telas até 600px (celulares em modo paisagem e portrait) */
 @media (max-width: 600px) {
-  main {
-    padding: 60px 10px 20px;
-  }
+    .autora-horizontal {
+        flex-direction: column; /* Empilha a imagem e o texto da autora verticalmente */
+        text-align: center; /* Centraliza o conteúdo da autora */
+    }
 
-  .saga-titulo {
-    font-size: 1.3em;
-    margin: 10px;
-  }
+    .autora-texto {
+        text-align: center; /* Centraliza o texto da autora */
+    }
 
-  .card-container {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 10px;
-    padding: 10px;
-  }
+    .footer {
+        /* Aumenta o padding inferior do footer para compensar os botões fixos */
+        /* Ajuste este valor (ex: 100px) de acordo com a altura dos seus botões + margem */
+        padding-bottom: 100px; 
+    }
+}
 
-  .titulo-livro {
-    font-size: 0.85em;
-    padding: 6px;
-  }
-
-  .card {
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  }
-
-  .autora-horizontal {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .autora-texto {
-    text-align: center;
-  }
+/* Para telas até 480px (celulares menores) */
+@media (max-width: 480px) {
+    .footer {
+        padding-bottom: 120px; /* Pode precisar de um pouco mais de espaço em telas muito pequenas */
+    }
 }
