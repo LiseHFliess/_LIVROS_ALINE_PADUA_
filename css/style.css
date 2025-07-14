@@ -313,8 +313,8 @@ body.dark-mode .scroll-down:hover {
     }
 
     .card-container {
-        /* Para telas maiores que 768px, mantenha os cards um pouco maiores */
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        /* Aumentado de 140px para 150px para manter um tamanho bom */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 15px;
         padding: 15px;
     }
@@ -368,11 +368,10 @@ body.dark-mode .scroll-down:hover {
         right: auto; /* Garante que não haja conflito com 'right' */
     }
 
-    /* Ajustes para Cards */
+    /* Ajustes para Cards: Aumentado de 100px para 120px */
     .card-container {
-        /* Permite que mais cards apareçam por linha, diminuindo o tamanho mínimo */
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 10px; /* Diminua o gap para aproveitar o espaço */
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
         padding: 10px;
     }
 }
@@ -388,9 +387,9 @@ body.dark-mode .scroll-down:hover {
         margin: 10px;
     }
 
+    /* Ajustes para Cards: Aumentado de 85px para 100px */
     .card-container {
-        /* Cards ainda menores para caber mais na tela do celular */
-        grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: 8px;
         padding: 8px;
     }
@@ -451,9 +450,9 @@ body.dark-mode .scroll-down:hover {
         left: 54px;
     }
 
-    /* Ajustes para Cards (pode diminuir ainda mais se necessário) */
+    /* Ajustes para Cards: Aumentado de 80px para 90px */
     .card-container {
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Tente 80px ou até 75px */
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
         gap: 6px;
         padding: 6px;
     }
