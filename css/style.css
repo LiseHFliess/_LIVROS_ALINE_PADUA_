@@ -1,0 +1,346 @@
+/* 🌐 IMPORTAÇÃO DE FONTES */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* 🔁 RESET E CONFIGURAÇÃO BASE */
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+}
+
+body, html {
+  background-color: #fff;
+  width: 100%;
+  
+  max-width: 100%;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.menu-open {
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+/* ⬇️ BLOQUEIO DE SCROLL */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* 📦 CONTEÚDO PRINCIPAL */
+main {
+  padding: 100px 20px 40px;
+  position: relative;
+  z-index: 1;
+  
+}
+
+/* 📚 SEÇÃO DE SAGAS */
+.saga {
+  margin-bottom: 40px;
+}
+
+.saga-titulo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.8em;
+  margin: 20px;
+  color: #333;
+  border-bottom: 2px solid #38618c;
+  padding-bottom: 5px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.saga-logo {
+  height: 40px;
+  width: auto;
+}
+
+/* 🧩 CARDS DE LIVROS */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s, background-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.titulo-livro {
+  padding: 10px;
+  font-size: 0.95em;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* 🌗 BOTÃO DE TEMA */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  padding: 10px 20px;
+  background-color: #38618c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #2c4965;
+}
+
+/* 🌌 TEMA ESCURO */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #eaeaea;
+}
+
+body.dark-mode .card {
+  background-color: #2c2c2c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .titulo-livro,
+body.dark-mode .saga-titulo,
+body.dark-mode .aside-anchor {
+  color: #f0f0f0;
+}
+
+body.dark-mode .saga-titulo {
+  border-color: #555;
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background-color: #666;
+}
+
+body.dark-mode .aside-right {
+  background-color: #111;
+}
+
+body.dark-mode .aside-anchor::after {
+  background-color: #888;
+}
+
+body.dark-mode .aside-anchor::before {
+  background-color: #fff;
+}
+
+/* 🔙 BOTÕES DE ROLAGEM */
+.scroll-top,
+.scroll-down {
+  position: fixed;
+  bottom: 20px;
+  z-index: 999;
+  padding: 10px;
+  background-color: #38618c;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scroll-top.show,
+.scroll-down.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-top:hover,
+.scroll-down:hover {
+  background-color: #2c4965;
+  transform: scale(1.05);
+}
+
+.scroll-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.scroll-top {
+  left: 20px;
+}
+
+.scroll-down {
+  left: 80px;
+}
+
+body.dark-mode .scroll-top,
+body.dark-mode .scroll-down {
+  background-color: #444;
+}
+
+body.dark-mode .scroll-top:hover,
+body.dark-mode .scroll-down:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 👣 RODAPÉ */
+.footer {
+  background-image: url('/img/BANNER.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+.footer-spacer {
+  height: 400px;
+}
+
+.footer-autora-horizontal {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.autora-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.autora-img {
+  width: 250px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.autora-texto {
+  max-width: 400px;
+  text-align: left;
+}
+
+.autora-texto p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  opacity: 0.9;
+  color: #f0f0f0;
+}
+
+.footer-icons a img {
+  width: 34px;
+  height: 34px;
+  filter: invert(1);
+  transition: transform 0.3s ease;
+}
+
+.footer-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.footer-copy {
+  font-size: 15px;
+  opacity: 0.85;
+  margin-top: 15px;
+}
+
+/* 📱 RESPONSIVIDADE */
+@media (max-width: 991px) {
+  main {
+    padding: 80px 15px 30px;
+  }
+
+  .saga-titulo {
+    font-size: 1.5em;
+    margin: 15px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .titulo-livro {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 60px 10px 20px;
+  }
+
+  .saga-titulo {
+    font-size: 1.3em;
+    margin: 10px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .titulo-livro {
+    font-size: 0.85em;
+    padding: 6px;
+  }
+
+  .card {
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .autora-horizontal {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .autora-texto {
+    text-align: center;
+  }
+}
