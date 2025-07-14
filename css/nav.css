@@ -22,12 +22,16 @@ main {
   padding-top: 100px; /* ou o valor que acomode sua nav com folga */
 }
 
+
 .nav-fixa ul {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 40px;
   width: 100%;
+  max-width: 600px; /* ou outro valor que funcione bem */
+  margin: 0 auto;
+  padding: 0;
 }
 
 .nav-fixa ul li a {
