@@ -1,50 +1,88 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-
 .nav-fixa {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 80px;
-  background-image: url("../img/BANNER.png");
-  background-size: cover;
-  background-position: center;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin-top: 0;
-  font-family: "Montserrat", sans-serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background-image: url("../img/BANNER.png");
+    background-size: cover;
+    background-position: center;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    font-family: "Montserrat", sans-serif;
 }
 
-
 main {
-  padding-top: 100px; /* ou o valor que acomode sua nav com folga */
+    padding-top: 100px; /* ou o valor que acomode sua nav com folga */
 }
 
 .nav-fixa ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Gap padrão para telas maiores */
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 10px; /* Adiciona um pequeno padding horizontal para evitar que os itens grudem nas bordas */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
-
 .nav-fixa ul li a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  transition: color 0.3s ease;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* melhora a legibilidade sobre a imagem */
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    white-space: nowrap; /* Impede que os textos dos links quebrem em várias linhas */
 }
 
 .nav-fixa ul li a:hover {
-  color: #ffd700;
+    color: #ffd700;
 }
 
+/* --- Media Queries para Responsividade --- */
+
+@media (max-width: 768px) {
+    .nav-fixa {
+        height: auto; /* Altura automática para se ajustar ao conteúdo */
+        padding: 10px 0; /* Adiciona um padding vertical */
+        flex-direction: column; /* Coloca os itens um abaixo do outro na navegação principal */
+    }
+
+    .nav-fixa ul {
+        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+        justify-content: center; /* Centraliza os itens quando quebram */
+        gap: 15px; /* Reduz o gap entre os itens para telas menores */
+        max-width: 100%; /* Permite que a lista ocupe toda a largura disponível */
+        padding: 0 15px; /* Ajusta o padding para telas menores */
+    }
+
+    .nav-fixa ul li {
+        margin: 5px 0; /* Adiciona um pouco de margem vertical entre os itens */
+    }
+
+    .nav-fixa ul li a {
+        font-size: 14px; /* Diminui um pouco o tamanho da fonte para economizar espaço */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-fixa ul {
+        flex-direction: column; /* Força os itens a ficarem em coluna em telas muito pequenas */
+        gap: 8px; /* Reduz ainda mais o gap */
+        align-items: flex-start; /* Alinha os itens à esquerda na coluna */
+        padding: 0 20px; /* Ajusta o padding para telas muito pequenas */
+    }
+
+    .nav-fixa ul li {
+        width: 100%; /* Faz com que cada item ocupe a largura total */
+        text-align: left; /* Alinha o texto à esquerda */
+    }
+}
