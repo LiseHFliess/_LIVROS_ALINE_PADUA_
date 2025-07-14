@@ -27,7 +27,7 @@ main {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 16px;
   width: 100%;
   max-width: 600px; /* ou outro valor que funcione bem */
   margin: 0 auto;
@@ -45,18 +45,5 @@ main {
 
 .nav-fixa ul li a:hover {
   color: #ffd700;
-}
-
-@media (max-width: 600px) {
-  .nav-fixa ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .nav-fixa {
-    height: auto; /* se precisar ajustar para conteúdo vertical */
-    padding: 10px 0;
-  }
 }
 
