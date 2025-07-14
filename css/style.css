@@ -161,7 +161,7 @@ body.dark-mode .aside-anchor::before {
 .scroll-top,
 .scroll-down {
     position: fixed;
-    bottom: 20px;
+    bottom: 20px; /* Mantém na parte inferior da tela */
     z-index: 999;
     padding: 10px;
     background-color: #38618c;
@@ -196,6 +196,7 @@ body.dark-mode .aside-anchor::before {
     display: block;
 }
 
+/* Posições padrão para desktop */
 .scroll-top {
     left: 20px;
 }
@@ -216,7 +217,7 @@ body.dark-mode .scroll-down:hover {
 
 /* 👣 RODAPÉ */
 .footer {
-    background-image: url("../img/BANNER.png");
+    background-image: url("../img/BANNER.png"); /* Ajuste o caminho da imagem conforme necessário */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -226,7 +227,7 @@ body.dark-mode .scroll-down:hover {
     padding: 30px 20px;
     margin-top: 40px;
     /* Padding inferior padrão para o footer (desktop). Ajustado para ter um respiro inicial. */
-    padding-bottom: 50px; 
+    padding-bottom: 50px;
 }
 
 .footer-spacer {
@@ -294,6 +295,7 @@ body.dark-mode .scroll-down:hover {
 }
 
 ---
+
 ## Media Queries para Responsividade
 
 ```css
@@ -312,7 +314,7 @@ body.dark-mode .scroll-down:hover {
 
     .card-container {
         /* Para telas maiores que 768px, mantenha os cards um pouco maiores */
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
         gap: 15px;
         padding: 15px;
     }
@@ -348,24 +350,28 @@ body.dark-mode .scroll-down:hover {
         font-size: 14px;
     }
 
-    /* Ajustes para Botões de Rolagem */
+    /* Ajustes para Botões de Rolagem: lado a lado na parte inferior */
     .scroll-top, .scroll-down {
-        width: 40px;
-        height: 40px;
+        width: 45px; /* Ligeiramente menores */
+        height: 45px;
         font-size: 20px;
-        right: 15px; /* Ajuste para não conflitar com o theme-toggle se estiverem próximos */
+        bottom: 15px; /* Mais perto da borda inferior */
     }
-    #scrollTopBtn {
-        bottom: 70px;
+
+    .scroll-top {
+        left: 15px; /* Posição à esquerda */
+        right: auto; /* Garante que não haja conflito com 'right' */
     }
-    #scrollDownBtn {
-        bottom: 15px;
+
+    .scroll-down {
+        left: 70px; /* Posição à esquerda, ao lado do botão de subir */
+        right: auto; /* Garante que não haja conflito com 'right' */
     }
 
     /* Ajustes para Cards */
     .card-container {
         /* Permite que mais cards apareçam por linha, diminuindo o tamanho mínimo */
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: 10px; /* Diminua o gap para aproveitar o espaço */
         padding: 10px;
     }
@@ -384,8 +390,8 @@ body.dark-mode .scroll-down:hover {
 
     .card-container {
         /* Cards ainda menores para caber mais na tela do celular */
-        grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); 
-        gap: 8px; 
+        grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+        gap: 8px;
         padding: 8px;
     }
 
@@ -427,6 +433,22 @@ body.dark-mode .scroll-down:hover {
     .nav-fixa ul li {
         width: 100%;
         text-align: left;
+    }
+
+    /* Ajustes para Botões de Rolagem */
+    .scroll-top, .scroll-down {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+        bottom: 8px;
+    }
+
+    .scroll-top {
+        left: 8px;
+    }
+
+    .scroll-down {
+        left: 54px;
     }
 
     /* Ajustes para Cards (pode diminuir ainda mais se necessário) */
