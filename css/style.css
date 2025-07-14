@@ -3,292 +3,220 @@
 
 /* 🔁 RESET E CONFIGURAÇÃO BASE */
 * {
-
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body, html {
-  background-color: #fff;
-  width: 100%;
-  
-  max-width: 100%;
-  overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #fff;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.menu-open {
-  height: 100vh;
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
 }
 
 /* ⬇️ BLOQUEIO DE SCROLL */
 body.menu-open {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 /* 📦 CONTEÚDO PRINCIPAL */
 main {
-  padding: 100px 20px 40px;
-  position: relative;
-  z-index: 1;
-  
+    padding: 100px 20px 40px;
+    position: relative;
+    z-index: 1;
 }
 
 /* 📚 SEÇÃO DE SAGAS */
 .saga {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .saga-titulo {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 1.8em;
-  margin: 20px;
-  color: #333;
-  border-bottom: 2px solid #38618c;
-  padding-bottom: 5px;
-  transition: color 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.8em;
+    margin: 20px;
+    color: #333;
+    border-bottom: 2px solid #38618c;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .saga-logo {
-  height: 40px;
-  width: auto;
+    height: 40px;
+    width: auto;
 }
 
 /* 🧩 CARDS DE LIVROS */
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 20px;
-  padding: 20px;
+    display: grid;
+    /* Padrão para desktop: cards com no mínimo 150px de largura */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
 .card {
-  background-color: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s, background-color 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  text-decoration: none;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s, background-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    text-decoration: none;
 }
 
 .card:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .card img {
-  width: 100%;
-  height: auto;
-  display: block;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .titulo-livro {
-  padding: 10px;
-  font-size: 0.95em;
-  color: #333;
-  font-weight: bold;
-  transition: color 0.3s ease;
+    padding: 10px;
+    font-size: 0.95em;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 /* 🌗 BOTÃO DE TEMA */
 .theme-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  padding: 10px 20px;
-  background-color: #38618c;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 14px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease, color 0.3s ease;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    padding: 10px 20px;
+    background-color: #38618c;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .theme-toggle:hover {
-  background-color: #2c4965;
+    background-color: #2c4965;
 }
 
 /* 🌌 TEMA ESCURO */
 body.dark-mode {
-  background-color: #1e1e1e;
-  color: #eaeaea;
+    background-color: #1e1e1e;
+    color: #eaeaea;
 }
 
 body.dark-mode .card {
-  background-color: #2c2c2c;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    background-color: #2c2c2c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 body.dark-mode .titulo-livro,
 body.dark-mode .saga-titulo,
 body.dark-mode .aside-anchor {
-  color: #f0f0f0;
+    color: #f0f0f0;
 }
 
 body.dark-mode .saga-titulo {
-  border-color: #555;
+    border-color: #555;
 }
 
 body.dark-mode .theme-toggle {
-  background-color: #444;
-  color: #fff;
+    background-color: #444;
+    color: #fff;
 }
 
 body.dark-mode .theme-toggle:hover {
-  background-color: #666;
+    background-color: #666;
 }
 
 body.dark-mode .aside-right {
-  background-color: #111;
+    background-color: #111;
 }
 
 body.dark-mode .aside-anchor::after {
-  background-color: #888;
+    background-color: #888;
 }
 
 body.dark-mode .aside-anchor::before {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 /* 🔙 BOTÕES DE ROLAGEM */
 .scroll-top,
 .scroll-down {
-  position: fixed;
-  bottom: 20px;
-  z-index: 999;
-  padding: 10px;
-  background-color: #38618c;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  opacity: 0;
-  pointer-events: none;
+    position: fixed;
+    bottom: 20px;
+    z-index: 999;
+    padding: 10px;
+    background-color: #38618c;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .scroll-top.show,
 .scroll-down.show {
-  opacity: 1;
-  pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .scroll-top:hover,
 .scroll-down:hover {
-  background-color: #2c4965;
-  transform: scale(1.05);
+    background-color: #2c4965;
+    transform: scale(1.05);
 }
 
 .scroll-icon {
-  width: 24px;
-  height: 24px;
-  display: block;
+    width: 24px;
+    height: 24px;
+    display: block;
 }
 
 .scroll-top {
-  left: 20px;
+    left: 20px;
 }
 
 .scroll-down {
-  left: 80px;
+    left: 80px;
 }
 
 body.dark-mode .scroll-top,
 body.dark-mode .scroll-down {
-  background-color: #444;
+    background-color: #444;
 }
 
 body.dark-mode .scroll-top:hover,
 body.dark-mode .scroll-down:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* 👣 RODAPÉ */
 .footer {
-background-image: url("../img/BANNER.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
-}
-
-.footer-spacer {
-  height: 400px;
-}
-
-.footer-autora-horizontal {
-  text-align: center;
-  margin-bottom: 30px;
-  color: white;
-}
-
-.autora-horizontal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.autora-img {
-  width: 250px;
-  height: auto;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-.autora-texto {
-  max-width: 400px;
-  text-align: left;
-}
-
-.autora-texto p {
-  font-size: 15px;
-  line-height: 1.5;
-  margin-bottom: 10px;
-  opacity: 0.9;
-  color: #f0f0f0;
-}
-
-.footer-icons a img {
-  width: 34px;
-  height: 34px;
-  filter: invert(1);
-  transition: transform 0.3s ease;
-}
-
-.footer-icons a:hover img {
-  transform: scale(1.2);
-}
-
-.footer-copy {
-  font-size: 15px;
-  opacity: 0.85;
-  margin-top: 15px;
-}
-
-/* 📱 RESPONSIVIDADE *//* 👣 RODAPÉ */
-.footer {
-    background-image: url("../img/BANNER.png"); /* Ajuste o caminho da imagem conforme necessário */
+    background-image: url("../img/BANNER.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -297,10 +225,10 @@ background-image: url("../img/BANNER.png");
     text-align: center;
     padding: 30px 20px;
     margin-top: 40px;
-   
+    /* Padding inferior padrão para o footer (desktop). Ajustado para ter um respiro inicial. */
+    padding-bottom: 50px; 
 }
 
-/* Verifique se este spacer ainda é necessário ou se o padding do footer é suficiente */
 .footer-spacer {
     height: 400px;
 }
@@ -340,23 +268,23 @@ background-image: url("../img/BANNER.png");
 }
 
 .footer-icons {
-    margin-top: 20px; /* Espaço entre o texto e os ícones sociais */
+    margin-top: 20px;
 }
 
 .footer-icons a {
-    display: inline-block; /* Para garantir que as imagens sejam tratadas como blocos em linha */
-    margin: 0 10px; /* Espaçamento entre os ícones */
+    display: inline-block;
+    margin: 0 10px;
 }
 
 .footer-icons a img {
     width: 34px;
     height: 34px;
-    filter: invert(1); /* Inverte as cores para que os ícones fiquem brancos */
+    filter: invert(1);
     transition: transform 0.3s ease;
 }
 
 .footer-icons a:hover img {
-    transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
+    transform: scale(1.2);
 }
 
 .footer-copy {
@@ -366,33 +294,150 @@ background-image: url("../img/BANNER.png");
 }
 
 ---
-
-### Media Queries para o Footer (Responsividade)
+## Media Queries para Responsividade
 
 ```css
 /* 📱 RESPONSIVIDADE */
 
+/* Para telas até 991px (tablets e desktops menores) */
+@media (max-width: 991px) {
+    main {
+        padding: 80px 15px 30px;
+    }
+
+    .saga-titulo {
+        font-size: 1.5em;
+        margin: 15px;
+    }
+
+    .card-container {
+        /* Para telas maiores que 768px, mantenha os cards um pouco maiores */
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .titulo-livro {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
+
+/* Para telas até 768px (tablets em modo retrato e celulares grandes) */
+@media (max-width: 768px) {
+    /* Ajustes para Navegação */
+    .nav-fixa {
+        height: auto;
+        padding: 10px 0;
+        flex-direction: column;
+    }
+
+    .nav-fixa ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .nav-fixa ul li {
+        margin: 5px 0;
+    }
+
+    .nav-fixa ul li a {
+        font-size: 14px;
+    }
+
+    /* Ajustes para Botões de Rolagem */
+    .scroll-top, .scroll-down {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        right: 15px; /* Ajuste para não conflitar com o theme-toggle se estiverem próximos */
+    }
+    #scrollTopBtn {
+        bottom: 70px;
+    }
+    #scrollDownBtn {
+        bottom: 15px;
+    }
+
+    /* Ajustes para Cards */
+    .card-container {
+        /* Permite que mais cards apareçam por linha, diminuindo o tamanho mínimo */
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+        gap: 10px; /* Diminua o gap para aproveitar o espaço */
+        padding: 10px;
+    }
+}
+
 /* Para telas até 600px (celulares em modo paisagem e portrait) */
 @media (max-width: 600px) {
+    main {
+        padding: 60px 10px 20px;
+    }
+
+    .saga-titulo {
+        font-size: 1.3em;
+        margin: 10px;
+    }
+
+    .card-container {
+        /* Cards ainda menores para caber mais na tela do celular */
+        grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); 
+        gap: 8px; 
+        padding: 8px;
+    }
+
+    .titulo-livro {
+        font-size: 0.85em;
+        padding: 6px;
+    }
+
+    .card {
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    /* Ajustes para Rodapé */
     .autora-horizontal {
-        flex-direction: column; /* Empilha a imagem e o texto da autora verticalmente */
-        text-align: center; /* Centraliza o conteúdo da autora */
+        flex-direction: column;
+        text-align: center;
     }
 
     .autora-texto {
-        text-align: center; /* Centraliza o texto da autora */
+        text-align: center;
     }
 
     .footer {
-        /* Aumenta o padding inferior do footer para compensar os botões fixos */
-        /* Ajuste este valor (ex: 100px) de acordo com a altura dos seus botões + margem */
-        padding-bottom: 100px; 
+        padding-bottom: 100px;
     }
 }
 
 /* Para telas até 480px (celulares menores) */
 @media (max-width: 480px) {
+    /* Ajustes para Navegação */
+    .nav-fixa ul {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+        padding: 0 20px;
+    }
+
+    .nav-fixa ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Ajustes para Cards (pode diminuir ainda mais se necessário) */
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Tente 80px ou até 75px */
+        gap: 6px;
+        padding: 6px;
+    }
+
+    /* Ajustes para Rodapé */
     .footer {
-        padding-bottom: 120px; /* Pode precisar de um pouco mais de espaço em telas muito pequenas */
+        padding-bottom: 120px;
     }
 }
