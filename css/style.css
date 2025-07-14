@@ -220,7 +220,7 @@ body.dark-mode .scroll-down:hover {
 
 /* 👣 RODAPÉ */
 .footer {
-  background-image: url('/img/BANNER.png');
+ background-image: url('./img/BANNER.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
