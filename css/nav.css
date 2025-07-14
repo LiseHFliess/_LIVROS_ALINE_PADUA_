@@ -6,7 +6,7 @@
   top: 0;
   width: 100%;
   height: 80px;
-  background-image: url(../img/BANNER.png);
+  background-image: url("../img/BANNER.png");
   background-size: cover;
   background-position: center;
   z-index: 1000;
