@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const scrollTopBtn = document.getElementById('scrollTopBtn');
   const scrollDownBtn = document.getElementById('scrollDownBtn');
+  const navHeight = 80;
 
-  // Mostra o botão "Subir" ao rolar
   if (scrollTopBtn) {
     window.addEventListener('scroll', () => {
       scrollTopBtn.classList.toggle('show', window.scrollY > 100);
@@ -13,12 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mostra sempre o botão "Descer" (pode ajustar se quiser esconder em algum momento)
   if (scrollDownBtn) {
-    scrollDownBtn.classList.add('show'); // Torna visível logo de início
+    scrollDownBtn.classList.add('show');
 
     scrollDownBtn.addEventListener('click', () => {
-      window.scrollBy({ top: 500, behavior: 'smooth' }); // Ajuste a quantidade conforme necessário
+      const headings = Array.from(document.querySelectorAll('[id] h2, footer[id] h1'));
+
+      const currentScroll = window.scrollY + navHeight + 5; // pequena margem extra
+
+      // Encontrar o próximo <h2> que ainda não está visível
+      const nextHeading = headings.find(h2 => {
+        const offset = h2.getBoundingClientRect().top + window.scrollY;
+        return offset > currentScroll;
+      });
+
+      if (nextHeading) {
+        const targetOffset = nextHeading.getBoundingClientRect().top + window.scrollY - navHeight;
+        window.scrollTo({ top: targetOffset, behavior: 'smooth' });
+      }
     });
   }
 });
