@@ -139,7 +139,7 @@ body.dark-mode .theme-toggle:hover {
 
 /* 🦶 FOOTER */
 .footer {
-  background-image: url('/img/BANNER.png');
+  background-image: url("/img/BANNER.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
