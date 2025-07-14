@@ -297,7 +297,7 @@ background-image: url("../img/BANNER.png");
     text-align: center;
     padding: 30px 20px;
     margin-top: 40px;
-    padding-bottom: 50px; /* Padding inferior padrão para o footer (desktop) */
+   
 }
 
 /* Verifique se este spacer ainda é necessário ou se o padding do footer é suficiente */
