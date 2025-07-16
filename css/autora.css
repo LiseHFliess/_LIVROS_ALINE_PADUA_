@@ -179,6 +179,11 @@ body.dark-mode .theme-toggle:hover {
   transform: scale(1.2);
 }
 
+.footer-icons a {
+  margin: 0 12px; /* Adiciona espaço lateral entre os ícones */
+}
+
+
 .footer-copy {
   font-size: 15px;
   opacity: 0.85;
