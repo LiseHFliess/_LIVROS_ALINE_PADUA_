@@ -29,6 +29,10 @@ body.dark-mode .saga h1 {
   color: #b0c4de;
 }
 
+body.dark-mode .autora-texto p{
+  color: #ffffff;
+}
+
 /* 📦 CARD SOBRE A AUTORA */
 .autora-box {
   background-color: #f9f9f9;
